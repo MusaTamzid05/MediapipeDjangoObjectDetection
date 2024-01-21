@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="card mb-3">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <img src="{{ photo.image.url }}" class="img-fluid rounded-start" 
+      alt="Original Image"
+       style="width: 1024px; height: 768px;"
+
+      >
+    </div>
+    <div class="col-md-6">
+      <img src="{{ photo.processed_image.url }}" class="img-fluid rounded-start" alt="ML Processed Image"
+                                                                        style="width: 1024px; height: 768px;"
+      >
+    </div>
+    <div class="col-md-12">
+      <div class="card-body text-center">
+        <h5 class="card-title">{{ photo.title }}</h5>
+        <form action="" method="get">
+          <button type="submit" class="btn btn-primary">Process Image</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock content %}
+

@@ -6,7 +6,7 @@
                 <div class = "card">
                     <img class="card-img-top" src="{{photo.image.url}}" />
                     <div class="card-body">
-                        <a href="">
+                        <a href="{% url 'detail' photo.id %}">
                             <h5 class="card-title fw-bold">{{photo.title}}</h5>
                         </a>
 
