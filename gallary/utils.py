@@ -25,7 +25,8 @@ class Detector:
 
     def visualize(self, image_path, detection_results):
         margin = 15
-        row = 15
+        row = 20
+        color = (255, 255, 255)
 
 
         result_image = cv2.imread(image_path)
@@ -39,14 +40,14 @@ class Detector:
                     result_image,
                     start_point,
                     end_point,
-                    (255, 0 , 0),
+                    color,
                     )
 
             category = detection.categories[0]
             category_name = category.category_name
             text_location = (margin + start_point[0], row + start_point[1])
 
-            font_scale = 2
+            font_scale = 1
             thinkness = 2
 
             cv2.putText(
@@ -55,7 +56,7 @@ class Detector:
                     text_location,
                     cv2.FONT_HERSHEY_COMPLEX,
                     font_scale,
-                    (255, 0, 0),
+                    color,
                     thinkness
                     )
 
