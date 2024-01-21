@@ -28,7 +28,12 @@ def process_image(request, photo_id):
     photo = get_object_or_404(Photo, pk=photo_id)
     image_path = str(settings.BASE_DIR) + photo.image.url
 
+    processed_image_name =  photo.processed_image.url.split("/")[-1]
+    print(processed_image_name)
 
+    if processed_image_name != "black.jpg":
+        print("Already processed")
+        return redirect("detail", photo_id=photo_id)
 
 
     if detector is None:
