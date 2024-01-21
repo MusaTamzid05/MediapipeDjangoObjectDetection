@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content  %}
+    <div class = "row row-cols-1 row-cols-md-3 g-4">
+        {% for photo in photos %}
+            <div v-for="movie in movies" class = "col">
+                <div class = "card">
+                    <img class="card-img-top" src="{{photo.image.url}}" />
+                    <div class="card-body">
+                        <a href="">
+                            <h5 class="card-title fw-bold">{{photo.title}}</h5>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        {% endfor %}
+
+    </div>
+
+ {% endblock %}
+
