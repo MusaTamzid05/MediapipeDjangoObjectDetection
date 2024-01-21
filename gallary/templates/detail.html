@@ -17,7 +17,7 @@
     <div class="col-md-12">
       <div class="card-body text-center">
         <h5 class="card-title">{{ photo.title }}</h5>
-        <form action="" method="get">
+        <form action="{% url 'process_image' photo.id %}" method="get">
           <button type="submit" class="btn btn-primary">Process Image</button>
         </form>
 
